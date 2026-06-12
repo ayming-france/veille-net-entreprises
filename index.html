@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Veille Net-Entreprises - Ayming</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://ayming-france.github.io/assets/engine/slides.css">
+  <style>
+    .reforme-grid { display: flex; gap: 32px; max-width: 1080px; margin: 30px auto 0; align-items: stretch; }
+    .reforme-card { flex: 1; border-radius: 18px; padding: 30px 32px; }
+    .reforme-avant { background: #f4f6f8; border: 1px solid #e0e6ec; color: #1d2b3a; }
+    .reforme-apres { background: linear-gradient(160deg, #003d79, #00509b); color: #fff; }
+    .reforme-tag { display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; padding: 5px 14px; border-radius: 20px; margin-bottom: 14px; }
+    .reforme-avant .reforme-tag { background: rgba(0,61,121,0.08); color: #00456d; }
+    .reforme-apres .reforme-tag { background: rgba(255,255,255,0.18); color: #fff; }
+    .reforme-card h3 { font-size: 21px; font-weight: 700; margin-bottom: 14px; }
+    .reforme-card ul { margin: 0; padding: 0; list-style: none; text-align: left; }
+    .reforme-card li { font-size: 14px; line-height: 1.55; padding: 7px 0 7px 26px; position: relative; }
+    .reforme-avant li::before { content: '•'; position: absolute; left: 8px; color: #0073b8; font-weight: 700; }
+    .reforme-apres li::before { content: '•'; position: absolute; left: 8px; color: #5fd4b4; font-weight: 700; }
+    .reforme-banner { max-width: 1080px; margin: 26px auto 0; padding: 16px 28px; border-radius: 14px; background: linear-gradient(90deg, rgba(15,167,226,0.10), rgba(10,179,140,0.10)); border: 1px solid rgba(17,169,230,0.35); font-size: 16.5px; font-weight: 700; color: #00456d; text-align: center; }
+    .ladder { display: flex; align-items: flex-end; gap: 14px; max-width: 1220px; margin: 18px auto 0; }
+    .ladder-step { flex: 1; border-radius: 14px; padding: 20px 16px; color: #fff; text-align: center; }
+    .ladder-step:nth-child(1) { margin-bottom: 0; }
+    .ladder-step:nth-child(2) { margin-bottom: 34px; }
+    .ladder-step:nth-child(3) { margin-bottom: 68px; }
+    .ladder-step:nth-child(4) { margin-bottom: 102px; }
+    .ladder-step:nth-child(5) { margin-bottom: 136px; }
+    .ladder-level { font-size: 10.5px; text-transform: uppercase; letter-spacing: 2px; opacity: 0.7; margin-bottom: 6px; }
+    .ladder-name { font-size: 15px; font-weight: 700; line-height: 1.3; margin-bottom: 9px; }
+    .ladder-adds { font-size: 12px; opacity: 0.88; line-height: 1.5; }
+    .ladder-footer { text-align: center; margin: 8px auto 0; max-width: 760px; font-size: 15.5px; color: #555; }
+    .ladder-footer strong { color: #003d79; }
+    .prix-grid { display: flex; gap: 32px; max-width: 1060px; margin: 30px auto 0; align-items: stretch; }
+    .prix-card { flex: 1; border-radius: 18px; padding: 30px 32px; }
+    .prix-inclus { background: #fff; border: 2px solid #0ab38c; color: #1d2b3a; }
+    .prix-modele { background: linear-gradient(160deg, #003d79, #00509b); color: #fff; }
+    .prix-card h3 { font-size: 21px; font-weight: 700; margin-bottom: 14px; }
+    .prix-card ul { margin: 0; padding: 0; list-style: none; text-align: left; }
+    .prix-card li { font-size: 14px; line-height: 1.55; padding: 7px 0 7px 26px; position: relative; }
+    .prix-inclus li::before { content: '✓'; position: absolute; left: 0; color: #0ab38c; font-weight: 700; }
+    .prix-modele li::before { content: '✓'; position: absolute; left: 0; color: #5fd4b4; font-weight: 700; }
+    .prix-note { font-size: 12.5px; opacity: 0.75; margin-top: 14px; line-height: 1.5; }
+    .next-step { margin-top: 34px; padding: 18px 26px; border-radius: 14px; background: linear-gradient(90deg, rgba(15,167,226,0.10), rgba(10,179,140,0.10)); border: 1px solid rgba(17,169,230,0.35); font-size: 18px; font-weight: 700; color: #00456d; text-align: center; }
+    .cal-note { text-align: center; margin-top: 26px; font-size: 13.5px; color: #777; max-width: 860px; margin-left: auto; margin-right: auto; line-height: 1.55; }
+    .testimonial-card .testimonial-front img { filter: brightness(0.8) saturate(0.85); transition: filter 0.4s ease; }
+    .testimonial-card:hover .testimonial-front img { filter: brightness(0.65) saturate(0.8); }
+  </style>
+</head>
+<body>
+
+  <nav class="chapter-nav">
+    <div class="nav-toggle"><span></span><span></span><span></span></div>
+    <div class="nav-header">
+      <div class="nav-logo"><img src="https://www.ayming.fr/wp-content/uploads/sites/3/2025/07/Ayming.png" alt="Ayming"></div>
+      <a class="nav-subtitle" href="https://www.ayming.fr/ressources-humaines/atmp/?utm_source=slides-sales&utm_medium=print&utm_campaign=veille-net-entreprises" target="_blank">Veille Net-Entreprises</a>
+    </div>
+    <div class="nav-section">
+      <div class="nav-section-title">Le Marché</div>
+      <div class="nav-item active" data-slide="0"><span class="nav-item-number">01</span>Couverture</div>
+      <div class="nav-item" data-slide="1"><span class="nav-item-number">02</span>Insight</div>
+      <div class="nav-item" data-slide="2"><span class="nav-item-number">03</span>La réforme</div>
+      <div class="nav-item" data-slide="3"><span class="nav-item-number">04</span>Alternatives</div>
+      <div class="nav-item" data-slide="4"><span class="nav-item-number">05</span>Monde idéal</div>
+    </div>
+    <div class="nav-section">
+      <div class="nav-section-title">Notre Solution</div>
+      <div class="nav-item" data-slide="5"><span class="nav-item-number">06</span>Introduction</div>
+      <div class="nav-item" data-slide="6"><span class="nav-item-number">07</span>Valeur</div>
+      <div class="nav-item" data-slide="11"><span class="nav-item-number">08</span>Modes opératoires</div>
+      <div class="nav-item" data-slide="12"><span class="nav-item-number">09</span>Tarification</div>
+      <div class="nav-item" data-slide="13"><span class="nav-item-number">10</span>Calendrier</div>
+      <div class="nav-item" data-slide="14"><span class="nav-item-number">11</span>Preuves</div>
+      <div class="nav-item" data-slide="15"><span class="nav-item-number">12</span>Implantation</div>
+      <div class="nav-item" data-slide="17"><span class="nav-item-number">13</span>Questions</div>
+      <div class="nav-item" data-slide="18"><span class="nav-item-number">14</span>Démarrage</div>
+    </div>
+  </nav>
+
+  <div class="slide-counter"><span class="current">1</span>/19</div>
+
+  <main class="presentation">
+
+    <!-- SLIDE 0: COVER -->
+    <section class="slide cover active" data-chapter="cover" data-slide="0">
+      <div class="cover-layout">
+        <div class="cover-left">
+          <div class="cover-logo"><img src="https://www.ayming.fr/wp-content/uploads/sites/3/2025/07/Ayming.png" alt="Ayming"></div>
+          <h1 class="cover-title">Veille<br>Net-Entreprises</h1>
+          <p class="cover-subtitle">Voir arriver chaque questionnaire AT/MP.<br>Répondre dans les délais. Piloter vos maladies professionnelles.</p>
+        </div>
+        <div class="cover-right">
+          <img class="cover-image" src="https://www.ayming.fr/wp-content/uploads/sites/3/2025/11/questionnaire-mp.jpg" alt="Veille Net-Entreprises">
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 1: INSIGHT -->
+    <section class="slide" data-chapter="insight" data-slide="1">
+      <div class="layout-split">
+        <div class="content-side">
+          <h1 class="slide-title">Depuis le 30 mars 2026, la CPAM ne vous prévient plus</h1>
+          <p class="content-paragraph">Avant, le compte QRP sur Ameli signalait chaque questionnaire, doublé d'un courrier à l'établissement. Depuis la réforme, tout passe par Net-Entreprises : <strong>les documents sont déposés en ligne sans notification ni alerte.</strong></p>
+          <p class="content-paragraph">Les délais, eux, n'ont pas bougé : 20 jours pour un questionnaire AT, 30 jours pour une MP, 10 jours pour consulter les pièces. Pour ne rien manquer, il faut désormais balayer chaque compte établissement au moins deux fois par semaine. <strong>Sur des dizaines d'établissements, la charge devient démesurée et l'oubli, inévitable.</strong></p>
+          <p class="content-paragraph highlight">Chez Ayming, nous croyons qu'un dossier AT/MP ne peut être défendu que s'il est vu à temps. La veille n'est pas une commodité administrative : c'est la première ligne de défense de votre taux.</p>
+        </div>
+        <div class="visual-side">
+          <div class="image-container">
+            <img src="https://www.ayming.fr/wp-content/uploads/sites/3/2025/10/suivi-pain.jpg" alt="Questionnaires non détectés">
+            <div class="floating-badge top-right"><span class="badge-number">20 j</span> pour répondre à un questionnaire AT</div>
+            <div class="floating-badge bottom-left"><span class="badge-number">2x/sem</span> de balayage nécessaire par établissement</div>
+          </div>
+        </div>
+      </div>
+      <div class="company-logo"><img src="https://www.ayming.fr/wp-content/uploads/sites/3/2025/07/Ayming.png" alt="Ayming"></div>
+    </section>
+
+    <!-- SLIDE 2: LA REFORME AVANT/APRES -->
+    <section class="slide" data-chapter="reforme" data-slide="2">
+      <div class="slide-inner">
+        <h1 class="slide-title">Ce qui a changé le 30 mars 2026</h1>
+        <div class="reforme-grid">
+          <div class="reforme-card reforme-avant">
+            <span class="reforme-tag">Avant, sur QRP via Ameli</span>
+            <h3>Vous étiez prévenus</h3>
+            <ul>
+              <li>Chaque questionnaire <strong>signalé</strong> et accessible en ligne</li>
+              <li>Doublé d'un courrier à l'établissement</li>
+              <li>Les RRH habilités recevaient toutes les notifications</li>
+              <li>Mail ou courrier d'invitation à chaque étape, avec l'indication des délais</li>
+            </ul>
+          </div>
+          <div class="reforme-card reforme-apres">
+            <span class="reforme-tag">Depuis, sur Net-Entreprises</span>
+            <h3>Vous devez aller vérifier</h3>
+            <ul>
+              <li>Document déposé en ligne mais <strong>non signalé</strong></li>
+              <li>Chaque compte établissement à vérifier au moins 2 fois par semaine</li>
+              <li>Aucune information préalable sur les délais de consultation</li>
+              <li>Le courrier papier subsiste, mais arrive quand le délai court déjà</li>
+            </ul>
+          </div>
+        </div>
+        <div class="reforme-banner">Sans veille organisée, des questionnaires passent inaperçus : l'imputation d'office devient le mode par défaut.</div>
+      </div>
+      <div class="company-logo"><img src="https://www.ayming.fr/wp-content/uploads/sites/3/2025/07/Ayming.png" alt="Ayming"></div>
+    </section>
+
+    <!-- SLIDE 3: ALTERNATIVES -->
+    <section class="slide" data-chapter="alternatives" data-slide="3">
+      <div class="slide-inner">
+        <h1 class="slide-title">Comment les entreprises s'organisent aujourd'hui</h1>
+        <div class="three-columns">
+          <div class="column-card">
+            <div class="card-image"><img src="https://www.ayming.fr/wp-content/uploads/sites/3/2025/10/Gerer-control-URSSAF_0000s_0000_1.jpg" alt="Balayage manuel"></div>
+            <h3>Le balayage manuel</h3>
+            <p><strong>Chronophage et faillible.</strong> Chaque compte Net-Entreprises est vérifié à la main, deux fois par semaine. La charge explose avec le nombre d'établissements, et un seul oubli suffit.</p>
+          </div>
+          <div class="column-card">
+            <div class="card-image"><img src="https://www.ayming.fr/wp-content/uploads/sites/3/2025/10/At-tiers-5.jpg" alt="Compter sur le courrier"></div>
+            <h3>Compter sur le courrier</h3>
+            <p><strong>Un filet troué.</strong> Le courrier papier subsiste, mais il arrive en établissement, circule lentement, et le délai de réponse court depuis le dépôt en ligne.</p>
+          </div>
+          <div class="column-card">
+            <div class="card-image"><img src="https://www.ayming.fr/wp-content/uploads/sites/3/2025/11/charges-1.jpg" alt="Ne rien changer"></div>
+            <h3>Ne rien changer</h3>
+            <p><strong>Le silence coûte cher.</strong> Un questionnaire sans réponse, c'est un risque d'imputation d'office : le coût du dossier alimente votre taux AT/MP pendant trois ans.</p>
+          </div>
+        </div>
+      </div>
+      <div class="company-logo"><img src="https://www.ayming.fr/wp-content/uploads/sites/3/2025/07/Ayming.png" alt="Ayming"></div>
+    </section>
+
+    <!-- SLIDE 4: MONDE IDEAL -->
+    <section class="slide" data-chapter="monde-ideal" data-slide="4">
+      <div class="slide-inner">
+        <h1 class="slide-title">Ce que serait une phase déclarative sous contrôle</h1>
+        <div class="four-columns">
+          <div class="column-card ideal-card">
+            <div class="card-image"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+            <h3>Rien ne passe inaperçu</h3>
+            <p>Chaque questionnaire, consultation ou observation est connu dès sa parution, avec son échéance.</p>
+          </div>
+          <div class="column-card ideal-card">
+            <div class="card-image"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg></div>
+            <h3>La bonne personne, tout de suite</h3>
+            <p>L'information arrive directement à celui qui peut répondre, sans transiter par des boîtes génériques.</p>
+          </div>
+          <div class="column-card ideal-card">
+            <div class="card-image"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 11-7.778 7.778 5.5 5.5 0 017.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"/></svg></div>
+            <h3>Des accès qui fonctionnent toujours</h3>
+            <p>Les codes sont valides le jour où on en a besoin, y compris pour les établissements créés en cours d'année.</p>
+          </div>
+          <div class="column-card ideal-card">
+            <div class="card-image"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg></div>
+            <h3>Des MP visibles et pilotées</h3>
+            <p>Une vision consolidée des dossiers en cours et reconnus, par établissement et par type de maladie.</p>
+          </div>
+        </div>
+      </div>
+      <div class="company-logo"><img src="https://www.ayming.fr/wp-content/uploads/sites/3/2025/07/Ayming.png" alt="Ayming"></div>
+    </section>
+
+    <!-- SLIDE 5: INTRODUCTION -->
+    <section class="slide slide-introduction" data-chapter="introduction" data-slide="5">
+      <div class="slide-inner">
+        <div class="intro-hero">
+          <div class="intro-hero-collage">
+            <img src="https://www.ayming.fr/wp-content/uploads/sites/3/2025/11/questionnaire-mp.jpg" alt="Questionnaires AT/MP">
+            <img src="https://ayming-france.github.io/assets/imagery/veille-net-entreprises/acciline-dashboard.png" alt="Acciline+">
+            <img src="https://www.ayming.fr/wp-content/uploads/sites/3/2025/10/export-arrets.jpg" alt="Routage des alertes">
+            <img src="https://www.ayming.fr/wp-content/uploads/sites/3/2025/11/questionnaire-mp.jpg" alt="Questionnaires AT/MP">
+            <img src="https://ayming-france.github.io/assets/imagery/veille-net-entreprises/acciline-dashboard.png" alt="Acciline+">
+            <img src="https://www.ayming.fr/wp-content/uploads/sites/3/2025/10/export-arrets.jpg" alt="Routage des alertes">
+          </div>
+          <div class="intro-hero-logo"><img src="https://www.ayming.fr/wp-content/uploads/sites/3/2025/07/Ayming.png" alt="Ayming"></div>
+          <div class="intro-title-band"><h2 class="intro-offer-title">Veille Net-Entreprises</h2></div>
+          <div class="intro-stats">
+            <div class="intro-stat-card"><div class="intro-stat-number">24-48h</div><div class="intro-stat-label">détection des événements</div></div>
+            <div class="intro-stat-card"><div class="intro-stat-number">J+7</div><div class="intro-stat-label">veille active après contrat</div></div>
+            <div class="intro-stat-card"><div class="intro-stat-number">35 000+</div><div class="intro-stat-label">accidents gérés / an</div></div>
+            <div class="intro-stat-card"><div class="intro-stat-number">20+ ans</div><div class="intro-stat-label">d'expertise AT/MP</div></div>
+          </div>
+        </div>
+        <div class="intro-content">
+          <p class="intro-pitch">Des robots spécialisés surveillent vos comptes Net-Entreprises, détectent chaque événement de la phase déclarative sous 24 à 48 heures, et alertent directement les bons interlocuteurs avec l'échéance. Vos équipes consacrent leur temps à la réponse, pas à la recherche.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 6: VALEUR OVERVIEW -->
+    <section class="slide" data-chapter="valeur" data-slide="6">
+      <div class="slide-inner">
+        <h1 class="slide-title">Ce qu'Ayming vous apporte</h1>
+        <div class="feature-grid-4">
+          <div class="feature-item">
+            <div class="feature-icon"><i data-lucide="radar"></i></div>
+            <div class="feature-content">
+              <h4>Détection sous 24 à 48h</h4>
+              <p>Questionnaires, consultations et observations identifiés dès leur parution : vous récupérez l'essentiel du délai pour préparer la réponse.</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon"><i data-lucide="key-round"></i></div>
+            <div class="feature-content">
+              <h4>Des codes Net-Entreprises maintenus</h4>
+              <p>Obsolescences détectées, renouvellements suivis, nouveaux établissements intégrés : vos accès fonctionnent le jour où il le faut.</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon"><i data-lucide="route"></i></div>
+            <div class="feature-content">
+              <h4>Des alertes routées aux bons interlocuteurs</h4>
+              <p>Chaque dossier part vers l'opérationnel concerné, avec lien et échéance. Le traitement de chaque étape clé est suivi.</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon"><i data-lucide="bar-chart-3"></i></div>
+            <div class="feature-content">
+              <h4>Le pilotage des MP avec Acciline+</h4>
+              <p>Une vue consolidée des dossiers MP et AT en cours d'instruction et imputés, avec statistiques selon votre organisation.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="company-logo"><img src="https://www.ayming.fr/wp-content/uploads/sites/3/2025/07/Ayming.png" alt="Ayming"></div>
+    </section>
+
+    <!-- SLIDE 7: VALEUR 1 DETECTION -->
+    <section class="slide" data-chapter="valeur-1" data-slide="7">
+      <div class="value-detail-layout">
+        <div class="value-detail-content">
+          <h2>Détection sous 24 à 48h</h2>
+          <ul class="value-detail-list">
+            <li><i data-lucide="check" class="check-icon"></i>Questionnaires AT et MP détectés dès leur parution sur Net-Entreprises</li>
+            <li><i data-lucide="check" class="check-icon"></i>Consultations de pièces et observations suivies avec leurs échéances</li>
+            <li><i data-lucide="check" class="check-icon"></i>Vous récupérez l'essentiel du délai réglementaire pour construire la réponse</li>
+            <li><i data-lucide="check" class="check-icon"></i>La veille couvre l'ensemble du périmètre, indépendamment des habilitations individuelles</li>
+          </ul>
+        </div>
+        <div class="value-detail-visual">
+          <div class="value-image-container">
+            <img src="https://www.ayming.fr/wp-content/uploads/sites/3/2025/11/questionnaire-mp.jpg" alt="Détection sous 24 à 48h">
+          </div>
+        </div>
+      </div>
+      <div class="company-logo"><img src="https://www.ayming.fr/wp-content/uploads/sites/3/2025/07/Ayming.png" alt="Ayming"></div>
+    </section>
+
+    <!-- SLIDE 8: VALEUR 2 CODES -->
+    <section class="slide" data-chapter="valeur-2" data-slide="8">
+      <div class="value-detail-layout">
+        <div class="value-detail-content">
+          <h2>Des codes Net-Entreprises maintenus</h2>
+          <ul class="value-detail-list">
+            <li><i data-lucide="check" class="check-icon"></i>Détection des codes obsolètes, en fin de vie ou en perte de connexion</li>
+            <li><i data-lucide="check" class="check-icon"></i>Veille au renouvellement des codes signalés, avec relance des responsables</li>
+            <li><i data-lucide="check" class="check-icon"></i>Intégration des nouveaux siret et siren au périmètre de veille</li>
+            <li><i data-lucide="check" class="check-icon"></i>Reporting régulier des volumes et des codes non fonctionnels</li>
+          </ul>
+        </div>
+        <div class="value-detail-visual">
+          <div class="value-image-container">
+            <img src="https://www.ayming.fr/wp-content/uploads/sites/3/2025/10/exporting-at.jpg" alt="Codes Net-Entreprises maintenus">
+          </div>
+        </div>
+      </div>
+      <div class="company-logo"><img src="https://www.ayming.fr/wp-content/uploads/sites/3/2025/07/Ayming.png" alt="Ayming"></div>
+    </section>
+
+    <!-- SLIDE 9: VALEUR 3 ROUTAGE -->
+    <section class="slide" data-chapter="valeur-3" data-slide="9">
+      <div class="value-detail-layout">
+        <div class="value-detail-content">
+          <h2>Des alertes routées aux bons interlocuteurs</h2>
+          <ul class="value-detail-list">
+            <li><i data-lucide="check" class="check-icon"></i>Table d'affectation de vos établissements aux personnes destinataires</li>
+            <li><i data-lucide="check" class="check-icon"></i>Chaque alerte part vers l'opérationnel concerné : dossier, lien, date d'échéance</li>
+            <li><i data-lucide="check" class="check-icon"></i>Gestion des relances en cas de non-traitement ou d'absence</li>
+            <li><i data-lucide="check" class="check-icon"></i>Webinaire de prise en main pour vos équipes RRH au démarrage</li>
+          </ul>
+        </div>
+        <div class="value-detail-visual">
+          <div class="value-image-container">
+            <img src="https://www.ayming.fr/wp-content/uploads/sites/3/2025/10/export-arrets.jpg" alt="Routage des alertes">
+          </div>
+        </div>
+      </div>
+      <div class="company-logo"><img src="https://www.ayming.fr/wp-content/uploads/sites/3/2025/07/Ayming.png" alt="Ayming"></div>
+    </section>
+
+    <!-- SLIDE 10: VALEUR 4 ACCILINE -->
+    <section class="slide" data-chapter="valeur-4" data-slide="10">
+      <div class="value-detail-layout">
+        <div class="value-detail-content">
+          <h2>Le pilotage des MP avec Acciline+</h2>
+          <ul class="value-detail-list">
+            <li><i data-lucide="check" class="check-icon"></i>Vue consolidée des dossiers MP et AT en cours d'instruction et imputés</li>
+            <li><i data-lucide="check" class="check-icon"></i>Statistiques par type de MP, établissement et niveau d'organisation, reconnues ou non</li>
+            <li><i data-lucide="check" class="check-icon"></i>Documents de consultation et arrêts de travail associés rattachés au dossier</li>
+            <li><i data-lucide="check" class="check-icon"></i>En option : traitement des questionnaires par les équipes Ayming, en débordement</li>
+          </ul>
+        </div>
+        <div class="value-detail-visual">
+          <div class="value-image-container">
+            <img src="https://ayming-france.github.io/assets/imagery/veille-net-entreprises/acciline-dashboard.png" alt="Tableau de bord Acciline+">
+          </div>
+        </div>
+      </div>
+      <div class="company-logo"><img src="https://www.ayming.fr/wp-content/uploads/sites/3/2025/07/Ayming.png" alt="Ayming"></div>
+    </section>
+
+    <!-- SLIDE 11: MODES OPERATOIRES -->
+    <section class="slide" data-chapter="modes" data-slide="11">
+      <div class="slide-inner">
+        <h1 class="slide-title">Vous choisissez le niveau de délégation</h1>
+        <div class="ladder">
+          <div class="ladder-step" style="background: linear-gradient(135deg, #003d79 0%, #00509b 100%);">
+            <div class="ladder-level">Niveau 1</div>
+            <div class="ladder-name">Robot seul</div>
+            <div class="ladder-adds">Données et alertes par e-mail aux bons interlocuteurs</div>
+          </div>
+          <div class="ladder-step" style="background: linear-gradient(135deg, #00509b 0%, #0073b8 100%);">
+            <div class="ladder-level">Niveau 2</div>
+            <div class="ladder-name">Robot + Acciline+</div>
+            <div class="ladder-adds">+ vue globalisée de tous les dossiers en cours</div>
+          </div>
+          <div class="ladder-step" style="background: linear-gradient(135deg, #0073b8 0%, #0a9cc4 100%);">
+            <div class="ladder-level">Niveau 3</div>
+            <div class="ladder-name">Paramétrage étendu</div>
+            <div class="ladder-adds">+ analyse statistique selon votre organisation</div>
+          </div>
+          <div class="ladder-step" style="background: linear-gradient(135deg, #0a9cc4 0%, #0ab38c 100%);">
+            <div class="ladder-level">Niveau 4</div>
+            <div class="ladder-name">Mises à jour Ayming</div>
+            <div class="ladder-adds">+ dépôt et mise à jour des documents téléchargés (GED)</div>
+          </div>
+          <div class="ladder-step" style="background: linear-gradient(135deg, #0ab38c 0%, #07c99a 100%);">
+            <div class="ladder-level">Niveau 5</div>
+            <div class="ladder-name">Traitement Ayming</div>
+            <div class="ladder-adds">+ réponse aux questionnaires en débordement et instruction externalisée</div>
+          </div>
+        </div>
+        <p class="ladder-footer">Vous démarrez au niveau qui correspond à votre organisation. <strong>Vous montez d'un cran quand vous êtes prêts.</strong></p>
+      </div>
+      <div class="company-logo"><img src="https://www.ayming.fr/wp-content/uploads/sites/3/2025/07/Ayming.png" alt="Ayming"></div>
+    </section>
+
+    <!-- SLIDE 12: TARIFICATION -->
+    <section class="slide" data-chapter="tarification" data-slide="12">
+      <div class="slide-inner">
+        <h1 class="slide-title">Un modèle simple : un forfait de mise en place, puis un coût par dossier</h1>
+        <div class="prix-grid">
+          <div class="prix-card prix-inclus">
+            <h3>Ce que le prix comprend</h3>
+            <ul>
+              <li>L'atelier initial de collecte des codes Net-Entreprises et leur vérification</li>
+              <li>Un webinaire à destination des RRH : actions à entreprendre et flux d'information</li>
+              <li>Le signalement des codes non fonctionnels sur le périmètre identifié</li>
+              <li>La mise en place des règles de routage vers vos équipes</li>
+            </ul>
+          </div>
+          <div class="prix-card prix-modele">
+            <h3>Comment nous facturons</h3>
+            <ul>
+              <li>Un forfait unique de mise en place</li>
+              <li>Puis un coût par dossier : 1 dossier = 1 numéro de dossier CPAM (1 n° de sécurité sociale + 1 date de sinistre + 1 code risque)</li>
+              <li>Un même dossier qui passe par un questionnaire puis plusieurs consultations n'est facturé qu'une seule fois</li>
+            </ul>
+            <p class="prix-note">Vous payez le flux réel de votre sinistralité, pas un abonnement déconnecté de votre activité. Tarification indexée Syntec à date anniversaire.</p>
+          </div>
+        </div>
+      </div>
+      <div class="company-logo"><img src="https://www.ayming.fr/wp-content/uploads/sites/3/2025/07/Ayming.png" alt="Ayming"></div>
+    </section>
+
+    <!-- SLIDE 13: CALENDRIER -->
+    <section class="slide" data-chapter="calendrier" data-slide="13">
+      <div class="slide-inner">
+        <h1 class="slide-title">Votre veille est active 7 jours après le contrat</h1>
+        <div class="process-timeline-4">
+          <div class="process-step">
+            <div class="step-number">1</div>
+            <div class="step-title">Contrat et ateliers</div>
+            <div class="step-duration">J+0</div>
+            <div class="step-description">Collecte et vérification des codes Net-Entreprises, table d'affectation</div>
+          </div>
+          <span class="step-arrow">→</span>
+          <div class="process-step">
+            <div class="step-number">2</div>
+            <div class="step-title">Début de la veille</div>
+            <div class="step-duration">J+7</div>
+            <div class="step-description">Les premiers établissements sont sous surveillance active</div>
+          </div>
+          <span class="step-arrow">→</span>
+          <div class="process-step">
+            <div class="step-number">3</div>
+            <div class="step-title">Périmètre complet</div>
+            <div class="step-duration">J+60</div>
+            <div class="step-description">Activation progressive de l'ensemble des sirets, codes défaillants signalés</div>
+          </div>
+          <span class="step-arrow">→</span>
+          <div class="process-step">
+            <div class="step-number">4</div>
+            <div class="step-title">Régime de croisière</div>
+            <div class="step-duration">J+90</div>
+            <div class="step-description">Routage des dossiers et communication ajustés à votre organisation</div>
+          </div>
+        </div>
+        <p class="cal-note">La création des habilitations Net-Entreprises reste de la responsabilité de vos équipes : nous identifions précisément les codes à corriger et alertons les responsables concernés.</p>
+      </div>
+      <div class="company-logo"><img src="https://www.ayming.fr/wp-content/uploads/sites/3/2025/07/Ayming.png" alt="Ayming"></div>
+    </section>
+
+    <!-- SLIDE 14: PREUVES -->
+    <section class="slide" data-chapter="preuves" data-slide="14">
+      <div class="slide-inner">
+        <h1 class="slide-title">Ils nous font confiance</h1>
+        <div class="testimonial-grid">
+          <div class="testimonial-card">
+            <div class="testimonial-card-inner">
+              <div class="testimonial-front">
+                <img src="https://www.ayming.fr/wp-content/uploads/sites/3/2025/05/STEF-532-x-532.jpg" alt="STEF">
+                <p class="testimonial-title">STEF améliore son pilotage des arrêts de travail</p>
+                <div class="testimonial-logo"><img src="https://www.ayming.fr/wp-content/uploads/sites/3/2025/08/STEF_logo.png" alt="STEF"></div>
+                <span class="testimonial-hint"><i data-lucide="refresh-cw"></i>Découvrir</span>
+              </div>
+              <div class="testimonial-back">
+                <div class="testimonial-stars"><span class="testimonial-stars-icons">★★★★★</span><span class="testimonial-date">Janvier 2024</span></div>
+                <div class="testimonial-quote-section">
+                  <p class="testimonial-quote">En cinq ans, la fréquence des accidents a été divisée par deux et cette tendance se maintient dans le temps. L'accompagnement d'Ayming nous a permis de structurer notre démarche.</p>
+                  <a href="https://www.ayming.fr/temoignages-clients/stef-ameliore-pilotage-arret-travail-et-risques-professionnels/?utm_source=slides-sales&utm_medium=print&utm_campaign=veille-net-entreprises&utm_content=testimonial" target="_blank" class="testimonial-cta">Lire la suite</a>
+                </div>
+                <div class="testimonial-author">
+                  <span class="testimonial-name">Benoit HAVEZ</span>
+                  <span class="testimonial-position">DRH, STEF GMS</span>
+                  <img class="testimonial-company-logo" src="https://www.ayming.fr/wp-content/uploads/sites/3/2025/08/STEF_logo.png" alt="STEF">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="testimonial-card-inner">
+              <div class="testimonial-front">
+                <img src="https://www.ayming.fr/wp-content/uploads/sites/3/2025/05/GEMFOS-532-x-532.jpg" alt="GEMFOS">
+                <p class="testimonial-title">GEMFOS réduit les accidents du travail</p>
+                <div class="testimonial-logo"><img src="https://www.ayming.fr/wp-content/uploads/sites/3/2025/05/GEMFOS-1-e1759136624846-176x46.jpg" alt="GEMFOS"></div>
+                <span class="testimonial-hint"><i data-lucide="refresh-cw"></i>Découvrir</span>
+              </div>
+              <div class="testimonial-back">
+                <div class="testimonial-stars"><span class="testimonial-stars-icons">★★★★★</span><span class="testimonial-date">Mars 2023</span></div>
+                <div class="testimonial-quote-section">
+                  <p class="testimonial-quote">Nous sommes pleinement satisfaits de la qualité du service fourni. L'équipe d'Ayming est composée de professionnels compétents qui comprennent nos enjeux.</p>
+                  <a href="https://www.ayming.fr/temoignages-clients/gemfos-reussi-a-reduire-les-accidents-du-travail-et-optimiser-la-gestion-des-absences/?utm_source=slides-sales&utm_medium=print&utm_campaign=veille-net-entreprises&utm_content=testimonial" target="_blank" class="testimonial-cta">Lire la suite</a>
+                </div>
+                <div class="testimonial-author">
+                  <span class="testimonial-name">Bruno Sollier</span>
+                  <span class="testimonial-position">Directeur Général, GEMFOS</span>
+                  <img class="testimonial-company-logo" src="https://www.ayming.fr/wp-content/uploads/sites/3/2025/05/GEMFOS-1-e1759136624846-176x46.jpg" alt="GEMFOS">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="testimonial-card-inner">
+              <div class="testimonial-front">
+                <img src="https://www.ayming.fr/wp-content/uploads/sites/3/2025/04/Colryut-532-x-532.jpg" alt="Colruyt">
+                <p class="testimonial-title">Colruyt sécurise ses coûts AT/MP</p>
+                <div class="testimonial-logo"><img src="https://www.ayming.fr/wp-content/uploads/sites/3/2025/08/colruyt-logo-png-transparent-e1759137868909-176x80.png" alt="Colruyt"></div>
+                <span class="testimonial-hint"><i data-lucide="refresh-cw"></i>Découvrir</span>
+              </div>
+              <div class="testimonial-back">
+                <div class="testimonial-stars"><span class="testimonial-stars-icons">★★★★★</span><span class="testimonial-date">Novembre 2023</span></div>
+                <div class="testimonial-quote-section">
+                  <p class="testimonial-quote">L'expertise de leurs équipes nous a permis de structurer nos pratiques en matière de gestion des AT/MP. C'est un partenariat qui s'inscrit dans la durée.</p>
+                  <a href="https://www.ayming.fr/temoignages-clients/colruyt-securise-ses-couts-lies-aux-at-mp/?utm_source=slides-sales&utm_medium=print&utm_campaign=veille-net-entreprises&utm_content=testimonial" target="_blank" class="testimonial-cta">Lire la suite</a>
+                </div>
+                <div class="testimonial-author">
+                  <span class="testimonial-name">Jordi Gonzalez</span>
+                  <span class="testimonial-position">Chef QHS, Colruyt</span>
+                  <img class="testimonial-company-logo" src="https://www.ayming.fr/wp-content/uploads/sites/3/2025/08/colruyt-logo-png-transparent-e1759137868909-176x80.png" alt="Colruyt">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="company-logo"><img src="https://www.ayming.fr/wp-content/uploads/sites/3/2025/07/Ayming.png" alt="Ayming"></div>
+    </section>
+
+    <!-- SLIDE 15: ANCRAGE FRANCE -->
+    <section class="slide" data-chapter="implantation" data-slide="15">
+      <div class="slide-inner">
+        <div class="ancrage-layout">
+          <div class="ancrage-text">
+            <h1 class="slide-title" style="text-align: left; margin-bottom: 28px;">Un fort ancrage <strong>en France</strong>...</h1>
+            <p>Nos équipes locales accompagnent au quotidien nos clients dans leur développement et leurs transformations <strong>en s'appuyant sur un écosystème de professionnels en régions</strong> :</p>
+            <p>experts scientifiques, experts comptables, établissements bancaires, pôles de compétitivité, fédérations professionnelles, avec un maillage de cabinets d'avocats et de médecins indépendants.</p>
+          </div>
+          <div class="ancrage-map">
+            <img src="https://ayming-france.github.io/assets/maps/france-map.svg" alt="France" />
+          </div>
+        </div>
+      </div>
+      <div class="company-logo"><img src="https://www.ayming.fr/wp-content/uploads/sites/3/2025/07/Ayming.png" alt="Ayming"></div>
+    </section>
+
+    <!-- SLIDE 16: IMPLANTATION INTERNATIONALE -->
+    <section class="slide" data-chapter="implantation" data-slide="16">
+      <div class="slide-inner">
+        <h1 class="slide-title">... avec des bureaux dans <strong>14 pays</strong> pour une proximité accrue avec nos clients et leur écosystème</h1>
+        <div class="implantation-container">
+          <img src="https://ayming-france.github.io/assets/maps/na-map.svg" alt="Amérique du Nord" class="implantation-na"/>
+          <img src="https://ayming-france.github.io/assets/maps/eu-map.svg" alt="Europe" class="implantation-eu"/>
+        </div>
+      </div>
+      <div class="company-logo"><img src="https://www.ayming.fr/wp-content/uploads/sites/3/2025/07/Ayming.png" alt="Ayming"></div>
+    </section>
+
+    <!-- SLIDE 17: QUESTIONS -->
+    <section class="slide" data-chapter="questions" data-slide="17">
+      <div class="slide-inner">
+        <h1 class="slide-title">Les questions que vous vous posez</h1>
+        <div class="faq-grid">
+          <div class="faq-card">
+            <h4><i data-lucide="help-circle"></i>Nos RRH reçoivent déjà les courriers de la CPAM.</h4>
+            <p>Le courrier subsiste, mais il arrive en établissement quand le délai court déjà depuis le dépôt en ligne. La veille détecte la parution sur Net-Entreprises, en amont du courrier, et alerte avec l'échéance exacte.</p>
+          </div>
+          <div class="faq-card">
+            <h4><i data-lucide="help-circle"></i>Qui répond aux questionnaires ?</h4>
+            <p>Vos équipes gardent la main sur les réponses. En option, les équipes Ayming traitent les questionnaires en débordement et identifient les écarts entre réserves émises et questionnaires reçus.</p>
+          </div>
+          <div class="faq-card">
+            <h4><i data-lucide="help-circle"></i>Et si un code Net-Entreprises ne fonctionne plus ?</h4>
+            <p>Nous le détectons et le signalons immédiatement. La création des habilitations reste de votre responsabilité, mais vous savez précisément quel code corriger, pour quel établissement, et qui relancer.</p>
+          </div>
+          <div class="faq-card">
+            <h4><i data-lucide="help-circle"></i>Comment le prix suit-il notre activité ?</h4>
+            <p>Vous payez par dossier : un numéro de dossier CPAM unique, facturé une seule fois même s'il passe par un questionnaire puis plusieurs consultations. Le coût suit votre sinistralité réelle.</p>
+          </div>
+        </div>
+      </div>
+      <div class="company-logo"><img src="https://www.ayming.fr/wp-content/uploads/sites/3/2025/07/Ayming.png" alt="Ayming"></div>
+    </section>
+
+    <!-- SLIDE 18: DEMARRAGE -->
+    <section class="slide" data-chapter="demarrage" data-slide="18">
+      <div class="slide-inner">
+        <h1 class="slide-title">Ce dont nous avons besoin pour démarrer</h1>
+        <div class="requirements-box">
+          <h4>Trois éléments simples</h4>
+          <ul>
+            <li><span class="check-icon"><i data-lucide="check"></i></span>La liste de vos siret/siren et des codes Net-Entreprises existants</li>
+            <li><span class="check-icon"><i data-lucide="check"></i></span>Une table d'affectation des établissements aux personnes destinataires des alertes</li>
+            <li><span class="check-icon"><i data-lucide="check"></i></span>Un atelier de collecte et de vérification des codes avec vos équipes</li>
+          </ul>
+        </div>
+        <p class="next-step">Prochaine étape : un atelier de 45 minutes pour recenser vos codes Net-Entreprises et cadrer le périmètre de veille.</p>
+      </div>
+      <div class="company-logo"><img src="https://www.ayming.fr/wp-content/uploads/sites/3/2025/07/Ayming.png" alt="Ayming"></div>
+    </section>
+
+  </main>
+
+  <script src="https://ayming-france.github.io/assets/engine/lucide.min.js"></script>
+  <script src="https://ayming-france.github.io/assets/engine/slides.js"></script>
+  <script>lucide.createIcons();</script>
+</body>
+</html>
