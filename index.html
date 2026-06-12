@@ -52,39 +52,6 @@
     .slide.active .la-4 { animation: ladderIn 0.35s ease 1.85s forwards; }
     .slide.active .ls-5 { animation: ladderIn 0.45s ease 2s forwards; }
     .slide.active .ladder-axis { animation: ladderIn 0.5s ease 2.4s forwards; }
-    .flow { display: flex; align-items: stretch; gap: 0; max-width: 1260px; margin: 24px auto 0; }
-    .flow-stage { flex: 1; border-radius: 16px; padding: 20px 18px; opacity: 0; }
-    .flow-tag { display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; padding: 4px 12px; border-radius: 20px; margin-bottom: 10px; }
-    .flow-stage h3 { font-size: 17px; font-weight: 700; margin: 0 0 10px; }
-    .flow-stage ul { margin: 0; padding: 0; list-style: none; text-align: left; }
-    .flow-stage li { font-size: 12.5px; line-height: 1.5; padding: 5px 0 5px 20px; position: relative; }
-    .flow-stage li::before { content: '•'; position: absolute; left: 6px; font-weight: 700; }
-    .flow-sources { background: #f4f6f8; border: 1px solid #dde4ea; color: #1d2b3a; }
-    .flow-sources .flow-tag { background: rgba(0,61,121,0.08); color: #00456d; }
-    .flow-source-card { background: #fff; border: 1px solid #e0e6ec; border-radius: 10px; padding: 9px 12px; margin-bottom: 8px; font-size: 12.5px; font-weight: 600; color: #1d2b3a; text-align: left; }
-    .flow-source-card span { display: block; font-size: 11px; font-weight: 400; color: #667; margin-top: 2px; }
-    .flow-collecte { background: linear-gradient(160deg, #003d79, #00509b); color: #fff; }
-    .flow-collecte .flow-tag { background: rgba(255,255,255,0.18); color: #fff; }
-    .flow-collecte li::before { color: #5fd4b4; }
-    .flow-conso { background: linear-gradient(160deg, #0073b8, #0a9cc4); color: #fff; }
-    .flow-conso .flow-tag { background: rgba(255,255,255,0.18); color: #fff; }
-    .flow-conso li::before { color: #d6f3ec; }
-    .flow-restit { background: #fff; border: 2px solid #0ab38c; color: #1d2b3a; }
-    .flow-restit .flow-tag { background: rgba(10,179,140,0.12); color: #068367; }
-    .flow-restit li::before { color: #0ab38c; }
-    .flow-arrow { display: flex; align-items: center; padding: 0 6px; opacity: 0; }
-    .flow-arrow svg { width: 26px; height: 26px; }
-    .flow-footer { text-align: center; margin: 24px auto 0; max-width: 860px; font-size: 15px; color: #555; opacity: 0; }
-    .flow-footer strong { color: #003d79; }
-    @keyframes flowIn { from { opacity: 0; transform: translateX(-10px); } to { opacity: 1; transform: translateX(0); } }
-    .slide.active .fs-1 { animation: flowIn 0.5s ease 0.2s forwards; }
-    .slide.active .fa-1 { animation: flowIn 0.4s ease 0.55s forwards; }
-    .slide.active .fs-2 { animation: flowIn 0.5s ease 0.7s forwards; }
-    .slide.active .fa-2 { animation: flowIn 0.4s ease 1.05s forwards; }
-    .slide.active .fs-3 { animation: flowIn 0.5s ease 1.2s forwards; }
-    .slide.active .fa-3 { animation: flowIn 0.4s ease 1.55s forwards; }
-    .slide.active .fs-4 { animation: flowIn 0.5s ease 1.7s forwards; }
-    .slide.active .flow-footer { animation: flowIn 0.5s ease 2.1s forwards; }
     .next-step { margin-top: 34px; padding: 18px 26px; border-radius: 14px; background: linear-gradient(90deg, rgba(15,167,226,0.10), rgba(10,179,140,0.10)); border: 1px solid rgba(17,169,230,0.35); font-size: 18px; font-weight: 700; color: #00456d; text-align: center; }
     .cal-note { text-align: center; margin-top: 26px; font-size: 13.5px; color: #777; max-width: 860px; margin-left: auto; margin-right: auto; line-height: 1.55; }
     .testimonial-card .testimonial-front img { filter: brightness(0.8) saturate(0.85); transition: filter 0.4s ease; }
@@ -111,16 +78,15 @@
       <div class="nav-section-title">Notre Solution</div>
       <div class="nav-item" data-slide="5"><span class="nav-item-number">06</span>Introduction</div>
       <div class="nav-item" data-slide="6"><span class="nav-item-number">07</span>Valeur</div>
-      <div class="nav-item" data-slide="11"><span class="nav-item-number">08</span>Le circuit</div>
-      <div class="nav-item" data-slide="12"><span class="nav-item-number">09</span>Modes opératoires</div>
-      <div class="nav-item" data-slide="13"><span class="nav-item-number">10</span>Preuves</div>
-      <div class="nav-item" data-slide="14"><span class="nav-item-number">11</span>Implantation</div>
-      <div class="nav-item" data-slide="16"><span class="nav-item-number">12</span>Questions</div>
-      <div class="nav-item" data-slide="17"><span class="nav-item-number">13</span>Démarrage</div>
+      <div class="nav-item" data-slide="11"><span class="nav-item-number">08</span>Modes opératoires</div>
+      <div class="nav-item" data-slide="12"><span class="nav-item-number">09</span>Preuves</div>
+      <div class="nav-item" data-slide="13"><span class="nav-item-number">10</span>Implantation</div>
+      <div class="nav-item" data-slide="15"><span class="nav-item-number">11</span>Questions</div>
+      <div class="nav-item" data-slide="16"><span class="nav-item-number">12</span>Démarrage</div>
     </div>
   </nav>
 
-  <div class="slide-counter"><span class="current">1</span>/18</div>
+  <div class="slide-counter"><span class="current">1</span>/17</div>
 
   <main class="presentation">
 
@@ -392,56 +358,8 @@
       <div class="company-logo"><img src="https://www.ayming.fr/wp-content/uploads/sites/3/2025/07/Ayming.png" alt="Ayming"></div>
     </section>
 
-    <!-- SLIDE 11: LE CIRCUIT DE LA DONNEE -->
-    <section class="slide" data-chapter="circuit" data-slide="11">
-      <div class="slide-inner">
-        <h1 class="slide-title">Le circuit de la donnée, de Net-Entreprises à vos équipes</h1>
-        <div class="flow">
-          <div class="flow-stage flow-sources fs-1">
-            <span class="flow-tag">1 · Sources</span>
-            <h3>Net-Entreprises et vos données</h3>
-            <div class="flow-source-card">Compte entreprise (QRP)<span>questionnaires, consultations, observations</span></div>
-            <div class="flow-source-card">Compte AT/MP<span>imputations sur votre taux</span></div>
-            <div class="flow-source-card">Flux établissements et salariés<span>votre référentiel RH</span></div>
-          </div>
-          <div class="flow-arrow fa-1"><svg viewBox="0 0 24 24" fill="#0073b8"><path d="M10 17l5-5-5-5v10z"/></svg></div>
-          <div class="flow-stage flow-collecte fs-2">
-            <span class="flow-tag">2 · Collecte</span>
-            <h3>Surveillance automatisée</h3>
-            <ul>
-              <li>Balayage continu de chaque compte établissement</li>
-              <li>Détection des événements sous 24 à 48h</li>
-              <li>Surveillance des codes et des pertes de connexion</li>
-            </ul>
-          </div>
-          <div class="flow-arrow fa-2"><svg viewBox="0 0 24 24" fill="#0073b8"><path d="M10 17l5-5-5-5v10z"/></svg></div>
-          <div class="flow-stage flow-conso fs-3">
-            <span class="flow-tag">3 · Consolidation</span>
-            <h3>Acciline+</h3>
-            <ul>
-              <li>Base unique de tous les dossiers AT et MP</li>
-              <li>Rattachement aux établissements et aux salariés</li>
-              <li>Historique d'instruction et documents associés</li>
-            </ul>
-          </div>
-          <div class="flow-arrow fa-3"><svg viewBox="0 0 24 24" fill="#0ab38c"><path d="M10 17l5-5-5-5v10z"/></svg></div>
-          <div class="flow-stage flow-restit fs-4">
-            <span class="flow-tag">4 · Restitution</span>
-            <h3>Vos équipes, informées</h3>
-            <ul>
-              <li>Alertes routées : dossier, lien, échéance</li>
-              <li>Tableaux de bord et statistiques selon votre organisation</li>
-              <li>Vue consolidée des MP reconnues ou non</li>
-            </ul>
-          </div>
-        </div>
-        <p class="flow-footer">Chaque étape enrichit la donnée : <strong>du dépôt brut sur Net-Entreprises à l'alerte actionnable chez la bonne personne.</strong></p>
-      </div>
-      <div class="company-logo"><img src="https://www.ayming.fr/wp-content/uploads/sites/3/2025/07/Ayming.png" alt="Ayming"></div>
-    </section>
-
-    <!-- SLIDE 12: MODES OPERATOIRES -->
-    <section class="slide" data-chapter="modes" data-slide="12">
+    <!-- SLIDE 11: MODES OPERATOIRES -->
+    <section class="slide" data-chapter="modes" data-slide="11">
       <div class="slide-inner">
         <h1 class="slide-title">Un niveau de service adapté à vos besoins</h1>
         <div class="ladder">
@@ -497,8 +415,8 @@
       <div class="company-logo"><img src="https://www.ayming.fr/wp-content/uploads/sites/3/2025/07/Ayming.png" alt="Ayming"></div>
     </section>
 
-    <!-- SLIDE 13: PREUVES -->
-    <section class="slide" data-chapter="preuves" data-slide="13">
+    <!-- SLIDE 12: PREUVES -->
+    <section class="slide" data-chapter="preuves" data-slide="12">
       <div class="slide-inner">
         <h1 class="slide-title">Ils nous font confiance</h1>
         <div class="testimonial-grid">
@@ -573,8 +491,8 @@
       <div class="company-logo"><img src="https://www.ayming.fr/wp-content/uploads/sites/3/2025/07/Ayming.png" alt="Ayming"></div>
     </section>
 
-    <!-- SLIDE 14: ANCRAGE FRANCE -->
-    <section class="slide" data-chapter="implantation" data-slide="14">
+    <!-- SLIDE 13: ANCRAGE FRANCE -->
+    <section class="slide" data-chapter="implantation" data-slide="13">
       <div class="slide-inner">
         <div class="ancrage-layout">
           <div class="ancrage-text">
@@ -590,8 +508,8 @@
       <div class="company-logo"><img src="https://www.ayming.fr/wp-content/uploads/sites/3/2025/07/Ayming.png" alt="Ayming"></div>
     </section>
 
-    <!-- SLIDE 15: IMPLANTATION INTERNATIONALE -->
-    <section class="slide" data-chapter="implantation" data-slide="15">
+    <!-- SLIDE 14: IMPLANTATION INTERNATIONALE -->
+    <section class="slide" data-chapter="implantation" data-slide="14">
       <div class="slide-inner">
         <h1 class="slide-title">... avec des bureaux dans <strong>14 pays</strong> pour une proximité accrue avec nos clients et leur écosystème</h1>
         <div class="implantation-container">
@@ -602,8 +520,8 @@
       <div class="company-logo"><img src="https://www.ayming.fr/wp-content/uploads/sites/3/2025/07/Ayming.png" alt="Ayming"></div>
     </section>
 
-    <!-- SLIDE 16: QUESTIONS -->
-    <section class="slide" data-chapter="questions" data-slide="16">
+    <!-- SLIDE 15: QUESTIONS -->
+    <section class="slide" data-chapter="questions" data-slide="15">
       <div class="slide-inner">
         <h1 class="slide-title">Les questions que vous vous posez</h1>
         <div class="faq-grid">
@@ -628,8 +546,8 @@
       <div class="company-logo"><img src="https://www.ayming.fr/wp-content/uploads/sites/3/2025/07/Ayming.png" alt="Ayming"></div>
     </section>
 
-    <!-- SLIDE 17: DEMARRAGE -->
-    <section class="slide" data-chapter="demarrage" data-slide="17">
+    <!-- SLIDE 16: DEMARRAGE -->
+    <section class="slide" data-chapter="demarrage" data-slide="16">
       <div class="slide-inner">
         <h1 class="slide-title">Ce dont nous avons besoin pour démarrer</h1>
         <div class="requirements-box">
