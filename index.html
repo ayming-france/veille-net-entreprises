@@ -32,16 +32,80 @@
     .ladder-adds { font-size: 12px; opacity: 0.88; line-height: 1.5; }
     .ladder-footer { text-align: center; margin: 8px auto 0; max-width: 760px; font-size: 15.5px; color: #555; }
     .ladder-footer strong { color: #003d79; }
-    .prix-grid { display: flex; gap: 32px; max-width: 1060px; margin: 30px auto 0; align-items: stretch; }
-    .prix-card { flex: 1; border-radius: 18px; padding: 30px 32px; }
-    .prix-inclus { background: #fff; border: 2px solid #0ab38c; color: #1d2b3a; }
-    .prix-modele { background: linear-gradient(160deg, #003d79, #00509b); color: #fff; }
-    .prix-card h3 { font-size: 21px; font-weight: 700; margin-bottom: 14px; }
-    .prix-card ul { margin: 0; padding: 0; list-style: none; text-align: left; }
-    .prix-card li { font-size: 14px; line-height: 1.55; padding: 7px 0 7px 26px; position: relative; }
-    .prix-inclus li::before { content: '✓'; position: absolute; left: 0; color: #0ab38c; font-weight: 700; }
-    .prix-modele li::before { content: '✓'; position: absolute; left: 0; color: #5fd4b4; font-weight: 700; }
-    .prix-note { font-size: 12.5px; opacity: 0.75; margin-top: 14px; line-height: 1.5; }
+    .flow { display: flex; align-items: stretch; gap: 0; max-width: 1260px; margin: 24px auto 0; }
+    .flow-stage { flex: 1; border-radius: 16px; padding: 20px 18px; opacity: 0; }
+    .flow-tag { display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; padding: 4px 12px; border-radius: 20px; margin-bottom: 10px; }
+    .flow-stage h3 { font-size: 17px; font-weight: 700; margin: 0 0 10px; }
+    .flow-stage ul { margin: 0; padding: 0; list-style: none; text-align: left; }
+    .flow-stage li { font-size: 12.5px; line-height: 1.5; padding: 5px 0 5px 20px; position: relative; }
+    .flow-stage li::before { content: '•'; position: absolute; left: 6px; font-weight: 700; }
+    .flow-sources { background: #f4f6f8; border: 1px solid #dde4ea; color: #1d2b3a; }
+    .flow-sources .flow-tag { background: rgba(0,61,121,0.08); color: #00456d; }
+    .flow-source-card { background: #fff; border: 1px solid #e0e6ec; border-radius: 10px; padding: 9px 12px; margin-bottom: 8px; font-size: 12.5px; font-weight: 600; color: #1d2b3a; text-align: left; }
+    .flow-source-card span { display: block; font-size: 11px; font-weight: 400; color: #667; margin-top: 2px; }
+    .flow-collecte { background: linear-gradient(160deg, #003d79, #00509b); color: #fff; }
+    .flow-collecte .flow-tag { background: rgba(255,255,255,0.18); color: #fff; }
+    .flow-collecte li::before { color: #5fd4b4; }
+    .flow-conso { background: linear-gradient(160deg, #0073b8, #0a9cc4); color: #fff; }
+    .flow-conso .flow-tag { background: rgba(255,255,255,0.18); color: #fff; }
+    .flow-conso li::before { color: #d6f3ec; }
+    .flow-restit { background: #fff; border: 2px solid #0ab38c; color: #1d2b3a; }
+    .flow-restit .flow-tag { background: rgba(10,179,140,0.12); color: #068367; }
+    .flow-restit li::before { color: #0ab38c; }
+    .flow-arrow { display: flex; align-items: center; padding: 0 6px; opacity: 0; }
+    .flow-arrow svg { width: 26px; height: 26px; }
+    .flow-footer { text-align: center; margin: 24px auto 0; max-width: 860px; font-size: 15px; color: #555; opacity: 0; }
+    .flow-footer strong { color: #003d79; }
+    @keyframes flowIn { from { opacity: 0; transform: translateX(-10px); } to { opacity: 1; transform: translateX(0); } }
+    .slide.active .fs-1 { animation: flowIn 0.5s ease 0.2s forwards; }
+    .slide.active .fa-1 { animation: flowIn 0.4s ease 0.55s forwards; }
+    .slide.active .fs-2 { animation: flowIn 0.5s ease 0.7s forwards; }
+    .slide.active .fa-2 { animation: flowIn 0.4s ease 1.05s forwards; }
+    .slide.active .fs-3 { animation: flowIn 0.5s ease 1.2s forwards; }
+    .slide.active .fa-3 { animation: flowIn 0.4s ease 1.55s forwards; }
+    .slide.active .fs-4 { animation: flowIn 0.5s ease 1.7s forwards; }
+    .slide.active .flow-footer { animation: flowIn 0.5s ease 2.1s forwards; }
+    @keyframes ganttBarGrow { from { opacity: 0; transform: scaleX(0); transform-origin: left; } to { opacity: 1; transform: scaleX(1); } }
+    @keyframes ganttLabelFade { from { opacity: 0; transform: translateY(-4px); } to { opacity: 1; transform: translateY(0); } }
+    .gantt { width: 100%; max-width: 1180px; margin: 24px auto 0; padding: 0 24px; box-sizing: border-box; }
+    .gantt-row { display: flex; align-items: center; width: 100%; }
+    .gantt-row-label { width: 80px; flex: 0 0 80px; font-size: 11px; color: #888; padding-right: 8px; box-sizing: border-box; }
+    .gantt-month-cell { flex: 1 1 auto; background: linear-gradient(90deg, #4a90d9 0%, #003d79 100%); color: #fff; text-align: center; font-weight: 700; font-size: 15px; letter-spacing: 1px; padding: 10px 0; border-radius: 8px 8px 0 0; }
+    .gantt-days-grid { flex: 1 1 auto; display: grid; grid-template-columns: repeat(12, 1fr); padding: 8px 0; border-bottom: 1px solid #e0e0e0; min-width: 0; }
+    .gantt-days-grid span { text-align: center; font-size: 11px; color: #888; min-width: 0; }
+    .gantt-phase { display: flex; align-items: flex-start; padding-top: 16px; width: 100%; }
+    .gantt-phase-spacer { width: 80px; flex: 0 0 80px; }
+    .gantt-track { flex: 1 1 auto; position: relative; height: 52px; min-width: 0; }
+    .gantt-bar { position: absolute; top: 8px; height: 5px; border-radius: 3px; opacity: 0; }
+    .gantt-bar::before, .gantt-bar::after { content: ''; position: absolute; top: 50%; transform: translateY(-50%); width: 9px; height: 9px; border-radius: 50%; }
+    .gantt-bar::before { left: -4px; }
+    .gantt-bar::after { right: -4px; }
+    .gantt-bar.bar-1 { background: #4a90d9; }
+    .gantt-bar.bar-1::before, .gantt-bar.bar-1::after { background: #4a90d9; }
+    .gantt-bar.bar-2 { background: #4a90d9; }
+    .gantt-bar.bar-2::before, .gantt-bar.bar-2::after { background: #4a90d9; }
+    .gantt-bar.bar-3 { background: #0ab38c; }
+    .gantt-bar.bar-3::before, .gantt-bar.bar-3::after { background: #0ab38c; }
+    .gantt-bar.bar-4 { background: #003d79; }
+    .gantt-bar.bar-4::before { background: #003d79; }
+    .gantt-bar.bar-4::after { background: transparent; width: 0; height: 0; right: -8px; border-top: 7px solid transparent; border-bottom: 7px solid transparent; border-left: 10px solid #003d79; border-radius: 0; }
+    .gantt-bar.bar-5 { background: #003d79; }
+    .gantt-bar.bar-5::before { background: #003d79; }
+    .gantt-bar.bar-5::after { background: transparent; width: 0; height: 0; right: -7px; border-top: 6px solid transparent; border-bottom: 6px solid transparent; border-left: 9px solid #003d79; border-radius: 0; }
+    .gantt-label { position: absolute; top: 22px; font-size: 13px; color: #333; line-height: 1.4; opacity: 0; }
+    .gantt-label strong { color: #003d79; font-weight: 700; }
+    .slide.active .gantt-bar.bar-1 { animation: ganttBarGrow 0.5s cubic-bezier(0.22,1,0.36,1) 0.3s forwards; }
+    .slide.active .gantt-bar.bar-2 { animation: ganttBarGrow 0.5s cubic-bezier(0.22,1,0.36,1) 0.6s forwards; }
+    .slide.active .gantt-bar.bar-3 { animation: ganttBarGrow 0.5s cubic-bezier(0.22,1,0.36,1) 0.9s forwards; }
+    .slide.active .gantt-bar.bar-4 { animation: ganttBarGrow 0.5s cubic-bezier(0.22,1,0.36,1) 1.2s forwards; }
+    .slide.active .gantt-bar.bar-5 { animation: ganttBarGrow 0.5s cubic-bezier(0.22,1,0.36,1) 1.5s forwards; }
+    .slide.active .gantt-label.lbl-1 { animation: ganttLabelFade 0.4s ease 0.6s forwards; }
+    .slide.active .gantt-label.lbl-2 { animation: ganttLabelFade 0.4s ease 0.9s forwards; }
+    .slide.active .gantt-label.lbl-3 { animation: ganttLabelFade 0.4s ease 1.2s forwards; }
+    .slide.active .gantt-label.lbl-4 { animation: ganttLabelFade 0.4s ease 1.5s forwards; }
+    .slide.active .gantt-label.lbl-5 { animation: ganttLabelFade 0.4s ease 1.8s forwards; }
+    .gantt-footnotes { max-width: 1180px; margin: 18px auto 0; padding: 0 24px; font-size: 11.5px; color: #666; line-height: 1.5; }
+    .gantt-footnotes p { margin: 4px 0; }
     .next-step { margin-top: 34px; padding: 18px 26px; border-radius: 14px; background: linear-gradient(90deg, rgba(15,167,226,0.10), rgba(10,179,140,0.10)); border: 1px solid rgba(17,169,230,0.35); font-size: 18px; font-weight: 700; color: #00456d; text-align: center; }
     .cal-note { text-align: center; margin-top: 26px; font-size: 13.5px; color: #777; max-width: 860px; margin-left: auto; margin-right: auto; line-height: 1.55; }
     .testimonial-card .testimonial-front img { filter: brightness(0.8) saturate(0.85); transition: filter 0.4s ease; }
@@ -68,8 +132,8 @@
       <div class="nav-section-title">Notre Solution</div>
       <div class="nav-item" data-slide="5"><span class="nav-item-number">06</span>Introduction</div>
       <div class="nav-item" data-slide="6"><span class="nav-item-number">07</span>Valeur</div>
-      <div class="nav-item" data-slide="11"><span class="nav-item-number">08</span>Modes opératoires</div>
-      <div class="nav-item" data-slide="12"><span class="nav-item-number">09</span>Tarification</div>
+      <div class="nav-item" data-slide="11"><span class="nav-item-number">08</span>Le circuit</div>
+      <div class="nav-item" data-slide="12"><span class="nav-item-number">09</span>Modes opératoires</div>
       <div class="nav-item" data-slide="13"><span class="nav-item-number">10</span>Calendrier</div>
       <div class="nav-item" data-slide="14"><span class="nav-item-number">11</span>Preuves</div>
       <div class="nav-item" data-slide="15"><span class="nav-item-number">12</span>Implantation</div>
@@ -351,8 +415,56 @@
       <div class="company-logo"><img src="https://www.ayming.fr/wp-content/uploads/sites/3/2025/07/Ayming.png" alt="Ayming"></div>
     </section>
 
-    <!-- SLIDE 11: MODES OPERATOIRES -->
-    <section class="slide" data-chapter="modes" data-slide="11">
+    <!-- SLIDE 11: LE CIRCUIT DE LA DONNEE -->
+    <section class="slide" data-chapter="circuit" data-slide="11">
+      <div class="slide-inner">
+        <h1 class="slide-title">Le circuit de la donnée, de Net-Entreprises à vos équipes</h1>
+        <div class="flow">
+          <div class="flow-stage flow-sources fs-1">
+            <span class="flow-tag">1 · Sources</span>
+            <h3>Net-Entreprises et vos données</h3>
+            <div class="flow-source-card">Compte entreprise (QRP)<span>questionnaires, consultations, observations</span></div>
+            <div class="flow-source-card">Compte AT/MP<span>imputations sur votre taux</span></div>
+            <div class="flow-source-card">Flux établissements et salariés<span>votre référentiel RH</span></div>
+          </div>
+          <div class="flow-arrow fa-1"><svg viewBox="0 0 24 24" fill="#0073b8"><path d="M10 17l5-5-5-5v10z"/></svg></div>
+          <div class="flow-stage flow-collecte fs-2">
+            <span class="flow-tag">2 · Collecte</span>
+            <h3>Robots spécialisés</h3>
+            <ul>
+              <li>Balayage continu de chaque compte établissement</li>
+              <li>Détection des événements sous 24 à 48h</li>
+              <li>Surveillance des codes et des pertes de connexion</li>
+            </ul>
+          </div>
+          <div class="flow-arrow fa-2"><svg viewBox="0 0 24 24" fill="#0073b8"><path d="M10 17l5-5-5-5v10z"/></svg></div>
+          <div class="flow-stage flow-conso fs-3">
+            <span class="flow-tag">3 · Consolidation</span>
+            <h3>Acciline+</h3>
+            <ul>
+              <li>Base unique de tous les dossiers AT et MP</li>
+              <li>Rattachement aux établissements et aux salariés</li>
+              <li>Historique d'instruction et documents associés</li>
+            </ul>
+          </div>
+          <div class="flow-arrow fa-3"><svg viewBox="0 0 24 24" fill="#0ab38c"><path d="M10 17l5-5-5-5v10z"/></svg></div>
+          <div class="flow-stage flow-restit fs-4">
+            <span class="flow-tag">4 · Restitution</span>
+            <h3>Vos équipes, informées</h3>
+            <ul>
+              <li>Alertes routées : dossier, lien, échéance</li>
+              <li>Tableaux de bord et statistiques selon votre organisation</li>
+              <li>Vue consolidée des MP reconnues ou non</li>
+            </ul>
+          </div>
+        </div>
+        <p class="flow-footer">Chaque étape enrichit la donnée : <strong>du dépôt brut sur Net-Entreprises à l'alerte actionnable chez la bonne personne.</strong></p>
+      </div>
+      <div class="company-logo"><img src="https://www.ayming.fr/wp-content/uploads/sites/3/2025/07/Ayming.png" alt="Ayming"></div>
+    </section>
+
+    <!-- SLIDE 12: MODES OPERATOIRES -->
+    <section class="slide" data-chapter="modes" data-slide="12">
       <div class="slide-inner">
         <h1 class="slide-title">Vous choisissez le niveau de délégation</h1>
         <div class="ladder">
@@ -387,68 +499,61 @@
       <div class="company-logo"><img src="https://www.ayming.fr/wp-content/uploads/sites/3/2025/07/Ayming.png" alt="Ayming"></div>
     </section>
 
-    <!-- SLIDE 12: TARIFICATION -->
-    <section class="slide" data-chapter="tarification" data-slide="12">
-      <div class="slide-inner">
-        <h1 class="slide-title">Un modèle simple : un forfait de mise en place, puis un coût par dossier</h1>
-        <div class="prix-grid">
-          <div class="prix-card prix-inclus">
-            <h3>Ce que le prix comprend</h3>
-            <ul>
-              <li>L'atelier initial de collecte des codes Net-Entreprises et leur vérification</li>
-              <li>Un webinaire à destination des RRH : actions à entreprendre et flux d'information</li>
-              <li>Le signalement des codes non fonctionnels sur le périmètre identifié</li>
-              <li>La mise en place des règles de routage vers vos équipes</li>
-            </ul>
-          </div>
-          <div class="prix-card prix-modele">
-            <h3>Comment nous facturons</h3>
-            <ul>
-              <li>Un forfait unique de mise en place</li>
-              <li>Puis un coût par dossier : 1 dossier = 1 numéro de dossier CPAM (1 n° de sécurité sociale + 1 date de sinistre + 1 code risque)</li>
-              <li>Un même dossier qui passe par un questionnaire puis plusieurs consultations n'est facturé qu'une seule fois</li>
-            </ul>
-            <p class="prix-note">Vous payez le flux réel de votre sinistralité, pas un abonnement déconnecté de votre activité. Tarification indexée Syntec à date anniversaire.</p>
-          </div>
-        </div>
-      </div>
-      <div class="company-logo"><img src="https://www.ayming.fr/wp-content/uploads/sites/3/2025/07/Ayming.png" alt="Ayming"></div>
-    </section>
-
-    <!-- SLIDE 13: CALENDRIER -->
+    <!-- SLIDE 13: CALENDRIER (GANTT) -->
     <section class="slide" data-chapter="calendrier" data-slide="13">
       <div class="slide-inner">
         <h1 class="slide-title">Votre veille est active 7 jours après le contrat</h1>
-        <div class="process-timeline-4">
-          <div class="process-step">
-            <div class="step-number">1</div>
-            <div class="step-title">Contrat et ateliers</div>
-            <div class="step-duration">J+0</div>
-            <div class="step-description">Collecte et vérification des codes Net-Entreprises, table d'affectation</div>
+        <p class="slide-subtitle" style="color: #555; font-size: 17px; margin-top: 6px;">La mise en place se déroule sur <strong style="color: #003d79;">3 mois</strong> ; la veille démarre dès la première semaine</p>
+        <div class="gantt">
+          <div class="gantt-row">
+            <div class="gantt-row-label"></div>
+            <div class="gantt-month-cell">3 mois</div>
           </div>
-          <span class="step-arrow">→</span>
-          <div class="process-step">
-            <div class="step-number">2</div>
-            <div class="step-title">Début de la veille</div>
-            <div class="step-duration">J+7</div>
-            <div class="step-description">Les premiers établissements sont sous surveillance active</div>
+          <div class="gantt-row">
+            <div class="gantt-row-label">Semaines :</div>
+            <div class="gantt-days-grid">
+              <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span><span>11</span><span>12</span>
+            </div>
           </div>
-          <span class="step-arrow">→</span>
-          <div class="process-step">
-            <div class="step-number">3</div>
-            <div class="step-title">Périmètre complet</div>
-            <div class="step-duration">J+60</div>
-            <div class="step-description">Activation progressive de l'ensemble des sirets, codes défaillants signalés</div>
+          <div class="gantt-phase">
+            <div class="gantt-phase-spacer"></div>
+            <div class="gantt-track">
+              <div class="gantt-bar bar-1" style="left: 0%; width: 8.3%;"></div>
+              <div class="gantt-label lbl-1" style="left: 0%; max-width: 280px;"><strong>J+0 &ndash; J+7 :</strong> ateliers, collecte et vérification des codes Net-Entreprises</div>
+            </div>
           </div>
-          <span class="step-arrow">→</span>
-          <div class="process-step">
-            <div class="step-number">4</div>
-            <div class="step-title">Régime de croisière</div>
-            <div class="step-duration">J+90</div>
-            <div class="step-description">Routage des dossiers et communication ajustés à votre organisation</div>
+          <div class="gantt-phase">
+            <div class="gantt-phase-spacer"></div>
+            <div class="gantt-track">
+              <div class="gantt-bar bar-2" style="left: 8.3%; width: 58.4%;"></div>
+              <div class="gantt-label lbl-2" style="left: 8.3%; max-width: 380px;"><strong>J+7 :</strong> début de la veille, activation progressive de l'ensemble des sirets</div>
+            </div>
+          </div>
+          <div class="gantt-phase">
+            <div class="gantt-phase-spacer"></div>
+            <div class="gantt-track">
+              <div class="gantt-bar bar-3" style="left: 50%; width: 46%;"></div>
+              <div class="gantt-label lbl-3" style="left: 50%; max-width: 340px;"><strong>J+45 :</strong> optimisation du routage et de la communication</div>
+            </div>
+          </div>
+          <div class="gantt-phase">
+            <div class="gantt-phase-spacer"></div>
+            <div class="gantt-track">
+              <div class="gantt-bar bar-4" style="left: 66.7%; width: 31%;"></div>
+              <div class="gantt-label lbl-4" style="left: 66.7%; max-width: 300px;"><strong>J+60 :</strong> veille sur l'ensemble du périmètre</div>
+            </div>
+          </div>
+          <div class="gantt-phase">
+            <div class="gantt-phase-spacer"></div>
+            <div class="gantt-track">
+              <div class="gantt-bar bar-5" style="left: 96%; width: 4%;"></div>
+              <div class="gantt-label lbl-5" style="right: 0; left: auto; max-width: 130px; text-align: right;"><strong>J+90 :</strong> régime de croisière</div>
+            </div>
           </div>
         </div>
-        <p class="cal-note">La création des habilitations Net-Entreprises reste de la responsabilité de vos équipes : nous identifions précisément les codes à corriger et alertons les responsables concernés.</p>
+        <div class="gantt-footnotes">
+          <p>La création des habilitations Net-Entreprises reste de la responsabilité de vos équipes : nous identifions précisément les codes à corriger et alertons les responsables concernés.</p>
+        </div>
       </div>
       <div class="company-logo"><img src="https://www.ayming.fr/wp-content/uploads/sites/3/2025/07/Ayming.png" alt="Ayming"></div>
     </section>
@@ -576,8 +681,8 @@
             <p>Nous le détectons et le signalons immédiatement. La création des habilitations reste de votre responsabilité, mais vous savez précisément quel code corriger, pour quel établissement, et qui relancer.</p>
           </div>
           <div class="faq-card">
-            <h4><i data-lucide="help-circle"></i>Comment le prix suit-il notre activité ?</h4>
-            <p>Vous payez par dossier : un numéro de dossier CPAM unique, facturé une seule fois même s'il passe par un questionnaire puis plusieurs consultations. Le coût suit votre sinistralité réelle.</p>
+            <h4><i data-lucide="help-circle"></i>Et les établissements créés en cours d'année ?</h4>
+            <p>Les nouveaux siret entrent dans le périmètre dès qu'ils nous sont transmis : leurs codes sont vérifiés, surveillés et routés comme les autres. La veille suit votre organisation, pas l'inverse.</p>
           </div>
         </div>
       </div>
