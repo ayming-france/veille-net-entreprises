@@ -13,14 +13,14 @@
     .reforme-avant { background: #f4f6f8; border: 1px solid #e0e6ec; color: #1d2b3a; }
     .reforme-apres { background: linear-gradient(160deg, var(--blue-dark), #00509b); color: #fff; }
     .reforme-tag { display: inline-block; font-size: var(--font-11); font-weight: var(--weight-bold); letter-spacing: 2px; text-transform: uppercase; padding: 5px var(--space-14); border-radius: var(--radius-2xl); margin-bottom: var(--space-14); }
-    .reforme-avant .reforme-tag { background: rgba(0,61,121,0.08); color: var(--blue-dark); }
+    .reforme-avant .reforme-tag { background: rgba(var(--blue-dark-rgb), 0.08); color: var(--blue-dark); }
     .reforme-apres .reforme-tag { background: rgba(255,255,255,0.18); color: #fff; }
     .reforme-card h3 { font-size: 21px; font-weight: var(--weight-bold); margin-bottom: var(--space-14); }
     .reforme-card ul { margin: 0; padding: 0; list-style: none; text-align: left; }
     .reforme-card li { font-size: var(--font-14); line-height: 1.55; padding: 7px 0 7px var(--space-26); position: relative; }
     .reforme-avant li::before { content: '•'; position: absolute; left: var(--space-8); color: #0073b8; font-weight: var(--weight-bold); }
     .reforme-apres li::before { content: '•'; position: absolute; left: var(--space-8); color: #5fd4b4; font-weight: var(--weight-bold); }
-    .reforme-banner { max-width: 1080px; margin: var(--space-26) auto 0; padding: var(--space-16) var(--space-28); border-radius: var(--radius-14); background: linear-gradient(90deg, rgba(15,167,226,0.10), rgba(10,179,140,0.10)); border: 1px solid rgba(17,169,230,0.35); font-size: 16.5px; font-weight: var(--weight-bold); color: var(--blue-dark); text-align: center; }
+    .reforme-banner { max-width: 1080px; margin: var(--space-26) auto 0; padding: var(--space-16) var(--space-28); border-radius: var(--radius-14); background: linear-gradient(90deg, rgba(var(--blue-primary-rgb), 0.10), rgba(var(--gradient-green-end-rgb), 0.10)); border: 1px solid rgba(var(--blue-primary-rgb), 0.35); font-size: 16.5px; font-weight: var(--weight-bold); color: var(--blue-dark); text-align: center; }
     .ladder { display: flex; align-items: flex-end; gap: var(--space-4); max-width: 1240px; margin: var(--space-14) auto 0; }
     .ladder-step { flex: 1; border-radius: var(--radius-14); padding: var(--space-18) var(--space-14); color: #fff; text-align: center; opacity: 0; }
     .ls-1 { margin-bottom: 0; }
@@ -33,6 +33,12 @@
     .ladder-pills { display: flex; flex-direction: column; gap: var(--space-6); margin-top: var(--space-10); }
     .ladder-pill { font-size: var(--font-11); line-height: 1.35; padding: 5px var(--space-10); border-radius: var(--radius-xl); background: rgba(255,255,255,0.16); color: #fff; opacity: 0.8; }
     .ladder-pill.new { background: #fff; color: var(--blue-dark); opacity: 1; font-weight: var(--weight-bold); }
+    .ladder-step.ls-1 { background: linear-gradient(135deg, var(--blue-dark) 0%, #00509b 100%); }
+    .ladder-step.ls-2 { background: linear-gradient(135deg, #00509b 0%, #0073b8 100%); }
+    .ladder-step.ls-3 { background: linear-gradient(135deg, #0073b8 0%, #0a9cc4 100%); }
+    .ladder-step.ls-4 { background: linear-gradient(135deg, #0a9cc4 0%, var(--gradient-green-end) 100%); }
+    .ladder-step.ls-5 { background: linear-gradient(135deg, var(--gradient-green-end) 0%, #07c99a 100%); }
+    .ancrage-title { text-align: left; margin-bottom: var(--space-28); }
     .ladder-arrow { display: flex; align-items: center; padding: 0 1px; opacity: 0; }
     .ladder-arrow svg { width: 24px; height: 24px; transform: rotate(-40deg); }
     .la-1 { margin-bottom: var(--space-52); }
@@ -53,7 +59,7 @@
     .slide.active .la-4 { animation: ladderIn 0.35s ease 1.85s forwards; }
     .slide.active .ls-5 { animation: ladderIn 0.45s ease 2s forwards; }
     .slide.active .ladder-axis { animation: ladderIn 0.5s ease 2.4s forwards; }
-    .next-step { margin-top: var(--space-34); padding: var(--space-18) var(--space-26); border-radius: var(--radius-14); background: linear-gradient(90deg, rgba(15,167,226,0.10), rgba(10,179,140,0.10)); border: 1px solid rgba(17,169,230,0.35); font-size: var(--font-18); font-weight: var(--weight-bold); color: var(--blue-dark); text-align: center; }
+    .next-step { margin-top: var(--space-34); padding: var(--space-18) var(--space-26); border-radius: var(--radius-14); background: linear-gradient(90deg, rgba(var(--blue-primary-rgb), 0.10), rgba(var(--gradient-green-end-rgb), 0.10)); border: 1px solid rgba(var(--blue-primary-rgb), 0.35); font-size: var(--font-18); font-weight: var(--weight-bold); color: var(--blue-dark); text-align: center; }
     .cal-note { text-align: center; margin-top: var(--space-26); font-size: 13.5px; color: #777; max-width: 860px; margin-left: auto; margin-right: auto; line-height: 1.55; }
     .testimonial-card .testimonial-front img { filter: brightness(0.8) saturate(0.85); transition: filter 0.4s ease; }
     .testimonial-card:hover .testimonial-front img { filter: brightness(0.65) saturate(0.8); }
@@ -368,7 +374,7 @@
       <div class="slide-inner">
         <h1 class="slide-title">Un niveau de service adapté à vos besoins</h1>
         <div class="ladder">
-          <div class="ladder-step ls-1" style="background: linear-gradient(135deg, #003d79 0%, #00509b 100%);">
+          <div class="ladder-step ls-1">
             <div class="ladder-level">Niveau 1</div>
             <div class="ladder-name">Veille seule</div>
             <div class="ladder-pills">
@@ -376,7 +382,7 @@
             </div>
           </div>
           <div class="ladder-arrow la-1"><svg viewBox="0 0 24 24" fill="none" stroke="#0073b8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
-          <div class="ladder-step ls-2" style="background: linear-gradient(135deg, #00509b 0%, #0073b8 100%);">
+          <div class="ladder-step ls-2">
             <div class="ladder-level">Niveau 2</div>
             <div class="ladder-name">Veille + Acciline+</div>
             <div class="ladder-pills">
@@ -385,7 +391,7 @@
             </div>
           </div>
           <div class="ladder-arrow la-2"><svg viewBox="0 0 24 24" fill="none" stroke="#0a9cc4" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
-          <div class="ladder-step ls-3" style="background: linear-gradient(135deg, #0073b8 0%, #0a9cc4 100%);">
+          <div class="ladder-step ls-3">
             <div class="ladder-level">Niveau 3</div>
             <div class="ladder-name">Paramétrage étendu</div>
             <div class="ladder-pills">
@@ -394,7 +400,7 @@
             </div>
           </div>
           <div class="ladder-arrow la-3"><svg viewBox="0 0 24 24" fill="none" stroke="#0ab38c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
-          <div class="ladder-step ls-4" style="background: linear-gradient(135deg, #0a9cc4 0%, #0ab38c 100%);">
+          <div class="ladder-step ls-4">
             <div class="ladder-level">Niveau 4</div>
             <div class="ladder-name">Mises à jour Ayming</div>
             <div class="ladder-pills">
@@ -403,7 +409,7 @@
             </div>
           </div>
           <div class="ladder-arrow la-4"><svg viewBox="0 0 24 24" fill="none" stroke="#07c99a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
-          <div class="ladder-step ls-5" style="background: linear-gradient(135deg, #0ab38c 0%, #07c99a 100%);">
+          <div class="ladder-step ls-5">
             <div class="ladder-level">Niveau 5</div>
             <div class="ladder-name">Traitement Ayming</div>
             <div class="ladder-pills">
@@ -504,7 +510,7 @@
       <div class="slide-inner">
         <div class="ancrage-layout">
           <div class="ancrage-text">
-            <h1 class="slide-title" style="text-align: left; margin-bottom: 28px;">Un fort ancrage <strong>en France</strong>...</h1>
+            <h1 class="slide-title ancrage-title">Un fort ancrage <strong>en France</strong>...</h1>
             <p>Nos équipes locales accompagnent au quotidien nos clients dans leur développement et leurs transformations <strong>en s'appuyant sur un écosystème de professionnels en régions</strong> :</p>
             <p>experts scientifiques, experts comptables, établissements bancaires, pôles de compétitivité, fédérations professionnelles, avec un maillage de cabinets d'avocats et de médecins indépendants.</p>
           </div>
